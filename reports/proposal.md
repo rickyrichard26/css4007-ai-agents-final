@@ -19,7 +19,7 @@ This matters because it turns a security-awareness skill into an on-demand tool:
 
 ## Selected Difficulty
 
-**D**
+D - Basic LLM application with a single prompt-to-validated-output pipeline
 
 ## Expected Functionality
 
