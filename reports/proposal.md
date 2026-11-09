@@ -1,4 +1,4 @@
-# Project Proposal
+# Project Proposal — Semester Week 10
 
 ## Project Title
 **PhishGuard: An LLM-Powered Phishing Email Analyzer**
@@ -68,11 +68,11 @@ def analyze_email(email: dict) -> dict:
 
 ## Proposed Agent Tools
 
-Not applicable. This is a D-level project, so there are no LLM-callable tools. The application is a single prompt-to-validated-output pipeline.
+Not applicable — D level. The application is a single prompt-to-validated-output pipeline with no LLM-callable tools.
 
 ## Model Selection
 
-- **Model:** TODO: confirm the model and provider (an OpenAI-compatible API, or a local model via Ollama).
+- **Model:** `gpt-5.6-luna` through an OpenAI-compatible chat completions API. The model name is a configuration value, so it can be swapped for another provider or a local model (for example via Ollama) without code changes.
 - **Approach:** API call with a low temperature (about 0.2) for consistent classification, a request for JSON-only output, and a 30-second timeout with up to 2 retries.
 - **Secrets:** the API key is read from an environment variable. `.env` is listed in `.gitignore`, and a `.env.example` is provided.
 - **Language:** Python.
