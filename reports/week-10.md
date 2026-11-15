@@ -28,6 +28,7 @@ No running application yet. This week was planning only: the proposal, the archi
 
 ## Problems Encountered
 
+- My first Week 10 proposal (commit `9ef964b`, 2 Nov 2026) was ForensiAgent at level A. After reviewing the level requirements, I decided that a level A agent (state, planning, guardrails, 12 tests including 4 guardrail scenarios, and a paper presentation) was too large to build and test well in the available time.
 - Choosing a topic that is simple enough for D level but still meaningful and relevant to my cyber security focus.
 - Deciding how strict the output schema should be so that it can be validated reliably.
 
