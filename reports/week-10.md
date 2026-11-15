@@ -10,9 +10,17 @@
 
 ## Important Commits
 
-- Commit hash: REPLACE_WITH_REAL_HASH
-- Description: Add project proposal and week 10 report
-- Link: REPLACE_WITH_COMMIT_LINK
+- Commit hash: 9ef964b
+- Description: Initial Week 10 proposal (ForensiAgent, level A), later replaced
+- Link: https://github.com/rickyrichard26/css4007-ai-agents-final/commit/9ef964b
+
+- Commit hash: a0d007b
+- Description: Revised proposal to PhishGuard (level D), 10 Nov
+- Link: https://github.com/rickyrichard26/css4007-ai-agents-final/commit/a0d007b
+
+- Commit hash: 0345570
+- Description: Week 10 report
+- Link: https://github.com/rickyrichard26/css4007-ai-agents-final/commit/0345570
 
 ## Current Functionality
 
