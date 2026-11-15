@@ -8,6 +8,7 @@
 - Ran the first working request with the real model and tested four sample emails (phishing, legitimate, suspicious, prompt injection).
 - Wrote basic documentation (`PHISHGUARD.md`) with setup and run instructions.
 - Switched the LLM provider from OpenAI to OpenRouter after the first API key ran out of credits.
+- Documented the change of topic and level from ForensiAgent (level A) to PhishGuard (level D); the reasons are in the Week 10 report. All Week 11 work refers to PhishGuard.
 
 ## Important Commits
 
