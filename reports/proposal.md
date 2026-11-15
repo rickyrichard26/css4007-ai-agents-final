@@ -137,3 +137,4 @@ In addition, I will run a small set of real emails (about 10 phishing and 10 leg
 
 - Significant changes to scope will be documented in the weekly reports.
 - AI coding assistants will be used and disclosed in the final report.
+- Scope change: the initial proposal (ForensiAgent, level A, 2 Nov 2026) was replaced by this PhishGuard proposal (level D) on 10 Nov 2026.
