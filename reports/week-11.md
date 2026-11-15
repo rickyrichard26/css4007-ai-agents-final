@@ -11,17 +11,13 @@
 
 ## Important Commits
 
-- Commit hash: REPLACE_WITH_HASH
-- Description: Add project proposal and week 10 report
-- Link: REPLACE_WITH_COMMIT_LINK
+- Commit hash: HASH_DARI_GIT_LOG
+- Description: Add LLM client, initial prompt and first working request (committed 16 Nov; the code was written and tested locally on 15 Nov)
+- Link: https://github.com/rickyrichard26/css4007-ai-agents-final/commit/HASH_DARI_GIT_LOG
 
-- Commit hash: REPLACE_WITH_HASH
-- Description: Add LLM client, initial prompt and first working request
-- Link: REPLACE_WITH_COMMIT_LINK
-
-- Commit hash: REPLACE_WITH_HASH
-- Description: Add week 11 report
-- Link: REPLACE_WITH_COMMIT_LINK
+- Commit hash: f268065
+- Description: Week 11 report
+- Link: https://github.com/rickyrichard26/css4007-ai-agents-final/commit/f268065
 
 ## Current Functionality
 
