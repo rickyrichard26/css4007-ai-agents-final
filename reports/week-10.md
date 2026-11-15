@@ -37,6 +37,7 @@ No running application yet. This week was planning only: the proposal, the archi
 - Chose phishing email analysis, where the input and output are well defined and easy to test.
 - Defined a fixed JSON schema with allowed values for the verdict and red flag types, and a score range of 0-100, so that validation can be done mechanically.
 - Planned tests with a mock LLM client so they are reproducible without an API key.
+- On 10 Nov 2026 I replaced the proposal with PhishGuard, an LLM-powered phishing email analyzer at level D (commits `0fe208e`, `60f51a0`, `a0d007b`). The scope is smaller, can be validated and tested thoroughly, and stays relevant to my cyber security focus. The final proposal is the PhishGuard one.
 
 ## What I Learned
 
