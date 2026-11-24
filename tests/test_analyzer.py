@@ -100,3 +100,17 @@ def test_missing_api_key_is_not_retried():
 def test_json_wrapped_in_markdown_fence_is_accepted():
     llm = FakeLLM("```json\n" + make_response() + "\n```")
     assert analyze_email(PHISHING_EMAIL, llm=llm, sleep=no_sleep)["verdict"] == "phishing"
+
+
+def test_inconsistent_verdict_and_score_is_retried_then_succeeds():
+    llm = FakeLLM(make_response("legitimate", 95), make_response("phishing", 95))
+    result = analyze_email(PHISHING_EMAIL, llm=llm, sleep=no_sleep)
+    assert result["verdict"] == "phishing"
+    assert llm.calls == 2
+
+
+def test_always_inconsistent_answer_fails_after_one_retry():
+    llm = FakeLLM(make_response("legitimate", 95))
+    with pytest.raises(OutputError, match="does not match"):
+        analyze_email(PHISHING_EMAIL, llm=llm, sleep=no_sleep)
+    assert llm.calls == 2

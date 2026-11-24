@@ -1,3 +1,4 @@
+"""Unit tests for src/output_validation.py (parsing and validating model output)."""
 import json
 
 import pytest
@@ -72,9 +73,30 @@ def test_invalid_risk_score_is_rejected(score):
         parse_and_validate(make_response(score=score))
 
 
-@pytest.mark.parametrize("score", [0, 100])
-def test_score_boundaries_are_accepted(score):
-    assert parse_and_validate(make_response(score=score))["risk_score"] == score
+@pytest.mark.parametrize(
+    "verdict, score",
+    [
+        ("legitimate", 0), ("legitimate", 30),
+        ("suspicious", 31), ("suspicious", 70),
+        ("phishing", 71), ("phishing", 100),
+    ],
+)
+def test_score_at_the_edge_of_its_verdict_range_is_accepted(verdict, score):
+    result = parse_and_validate(make_response(verdict, score, flags=[]))
+    assert result["risk_score"] == score
+
+
+@pytest.mark.parametrize(
+    "verdict, score",
+    [
+        ("legitimate", 31), ("legitimate", 95),
+        ("suspicious", 30), ("suspicious", 71),
+        ("phishing", 70), ("phishing", 0),
+    ],
+)
+def test_verdict_that_does_not_match_the_score_is_rejected(verdict, score):
+    with pytest.raises(OutputError, match="does not match"):
+        parse_and_validate(make_response(verdict, score, flags=[]))
 
 
 def test_missing_risk_score_is_rejected():

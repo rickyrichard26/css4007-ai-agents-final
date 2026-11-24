@@ -8,6 +8,12 @@ import re
 from src.errors import OutputError
 
 VALID_VERDICTS = ("phishing", "suspicious", "legitimate")
+# The risk score must fall in the range that belongs to the verdict.
+VERDICT_SCORE_RANGES = {
+    "legitimate": (0, 30),
+    "suspicious": (31, 70),
+    "phishing": (71, 100),
+}
 VALID_FLAG_TYPES = (
     "urgency",
     "suspicious_link",
@@ -49,6 +55,13 @@ def parse_and_validate(raw_text: str) -> dict:
         score = int(score)
     if isinstance(score, bool) or not isinstance(score, int) or not 0 <= score <= 100:
         raise OutputError(f"risk_score must be an integer from 0 to 100, got {score!r}.")
+
+    low, high = VERDICT_SCORE_RANGES[verdict]
+    if not low <= score <= high:
+        raise OutputError(
+            f"The verdict {verdict!r} does not match risk_score {score} "
+            f"(expected {low}-{high})."
+        )
 
     flags = data.get("red_flags")
     if not isinstance(flags, list):
