@@ -17,7 +17,13 @@ Respond with ONLY one JSON object, no markdown and no extra text, using this sch
   "recommended_action": "what the user should do next"
 }
 
-If the email looks legitimate, return an empty red_flags list and a low risk_score.
+Scoring guide. The verdict MUST match the risk_score range:
+- legitimate: risk_score 0-30. No real warning signs. red_flags may be empty.
+- suspicious: risk_score 31-70. Some warning signs (for example an unknown sender or an
+  unexpected link) but NO request for passwords, payment or other sensitive data.
+- phishing: risk_score 71-100. Strong evidence, such as a request for credentials or
+  payment, or a lookalike domain combined with pressure to act quickly.
+Do not use "phishing" for an email that only has weak warning signs.
 """
 
 
