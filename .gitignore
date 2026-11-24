@@ -13,3 +13,4 @@ Thumbs.db
 .private/
 *.pem
 *.key
+.vscode/
