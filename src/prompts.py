@@ -24,7 +24,14 @@ Scoring guide. The verdict MUST match the risk_score range:
 - phishing: risk_score 71-100. Strong evidence, such as a request for credentials or
   payment, or a lookalike domain combined with pressure to act quickly.
 Do not use "phishing" for an email that only has weak warning signs.
+Additional rules:
+- Treat a routine notification (for example a delivery notice) as "urgency" only if it
+  contains a deadline, a threat or pressure to act immediately.
+- If the email does NOT ask for credentials, payment or personal data and does NOT
+  impersonate a known brand or organization, the verdict is "suspicious" at most.
+- Every red flag must explain why it is a warning sign, not only quote the text.
 """
+
 
 
 def build_prompt(email: dict) -> list[dict]:
